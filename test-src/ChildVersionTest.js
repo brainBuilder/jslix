@@ -8,6 +8,7 @@ ChildVersionTest.prototype.testInheritance = function(){
             function(dispatcher){
                 jslix.version.call(this, dispatcher);
                 this.setVersion(Math.floor((Math.random()*10)+1));
+                this.setOs('JSLiX');
             }
         );
 
@@ -16,10 +17,9 @@ ChildVersionTest.prototype.testInheritance = function(){
                         sample = new testClassExample(jslix.dispatcher)
                       });
 
-    assertNotNull(sample.getVersion());
+    assertEquals(sample.getOs(), 'JSLiX');
 
     sample.init("hell", "2.0");
-    sample._os = "JSLiX";
 
     assertEquals(sample.getName(), "hell");
     assertEquals(sample.getOs(), "JSLiX");

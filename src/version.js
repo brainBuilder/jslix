@@ -36,6 +36,10 @@
         return this._os;
     }
 
+    jslix.version.prototype.setOs = function(os){
+        this._os = os;
+    }
+
     jslix.version._defineOs = function(){
         var type = '';
         var vers = '';
