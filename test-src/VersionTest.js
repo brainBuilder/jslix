@@ -1,6 +1,8 @@
 VersionTest = new TestCase("VersionTest");
 
+
 VersionTest.prototype.testInitVersion = function(){
+    jslix.dispatcher.handlers.length = 0;
     var version;
 
     assertNoException(function(){
@@ -16,6 +18,7 @@ VersionTest.prototype.testInitVersion = function(){
 };
 
 VersionTest.prototype.testGet = function(){
+    jslix.dispatcher.handlers.length = 0;
     var version = new jslix.version(jslix.dispatcher);
     version.init('Deadushka Moroz', '2.0');
 
@@ -36,10 +39,10 @@ VersionTest.prototype.testGet = function(){
                         });
 
     assertTrue(requestId in jslix.dispatcher.deferreds);
-
 };
 
 VersionTest.prototype.testEqualityNames = function(){
+    jslix.dispatcher.handlers.length = 0;
     var version1 = new jslix.version(jslix.dispatcher);
     var version2 = new jslix.version(jslix.dispatcher);
 
