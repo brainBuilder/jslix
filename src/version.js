@@ -36,10 +36,6 @@
         return this._os;
     }
 
-    jslix.version.prototype.setOs = function(os){
-        this._os = os;
-    }
-
     jslix.version._defineOs = function(){
         var type = '';
         var vers = '';
@@ -84,7 +80,7 @@
         this.setName(name);
         this.setVersion(version);
 
-        if (this._dispatcher) this._dispatcher.addHandler(jslix.version.stanzas.request, this);
+        this._dispatcher.addHandler(jslix.version.stanzas.request, this);
     };
 
     jslix.version.stanzas = {

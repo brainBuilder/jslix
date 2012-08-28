@@ -10,7 +10,7 @@ ChildVersionTest.prototype.testInheritance = function(){
             function(dispatcher){
                 jslix.version.call(this, dispatcher);
                 this.setVersion(Math.floor((Math.random()*10)+1));
-                this.setOs('JSLiX');
+                this._os = 'JSLiX';
             }
         );
 
